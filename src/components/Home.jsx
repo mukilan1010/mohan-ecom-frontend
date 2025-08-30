@@ -22,10 +22,8 @@ const Home = ({ selectedCategory }) => {
                 const updatedProducts = await Promise.all(
                     data.map(async (product) => {
                         try {
-                            const backendUrl = process.env.REACT_APP_BACKEND_URL;
-
                             const response = await axios.get(
-                                `${backendUrl}/api/product/${product.id}/image`,
+                                `http://13.48.29.25:8080/api/product/${product.id}/image`,
                                 { responseType: "blob" }
                             );
                             const imageUrl = URL.createObjectURL(response.data);
