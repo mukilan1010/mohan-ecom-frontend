@@ -12,6 +12,8 @@ const Product = () => {
   const [imageUrl, setImageUrl] = useState("");
   const navigate = useNavigate();
 
+
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
