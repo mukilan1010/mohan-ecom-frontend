@@ -22,13 +22,13 @@ const UpdateProduct = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-            `http://13.48.29.25:8080/api/product/${id}`
+            `http://13.62.45.52:8080/api/product/${id}`
         );
 
         setProduct(response.data);
 
         const responseImage = await axios.get(
-            `http://13.48.29.25:8080/api/product/${id}/image`,
+            `http://13.62.45.52:8080/api/product/${id}/image`,
             { responseType: "blob" }
         );
         const imageFile = await converUrlToFile(responseImage.data,response.data.imageName)
@@ -67,7 +67,7 @@ const UpdateProduct = () => {
 
     console.log("formData : ", updatedProduct)
     axios
-        .put(`http://13.48.29.25:8080/api/product/${id}`, updatedProduct, {
+        .put(`http://13.62.45.52:8080/api/product/${id}`, updatedProduct, {
           headers: {
             "Content-Type": "multipart/form-data",
           },

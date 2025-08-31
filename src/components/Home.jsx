@@ -23,7 +23,7 @@ const Home = ({ selectedCategory }) => {
                     data.map(async (product) => {
                         try {
                             const response = await axios.get(
-                                `http://13.48.29.25:8080/api/product/${product.id}/image`,
+                                `http://13.62.45.52:8080/api/product/${product.id}/image`,
                                 { responseType: "blob" }
                             );
                             const imageUrl = URL.createObjectURL(response.data);
